@@ -44,8 +44,6 @@ const maxAttack = Math.max(...pokemons.map((p) => p.attack));
 function App() {
   return (
     <>
-      <h1>Pokemon App</h1>
-
       <div
         style={{
           display: "grid",
