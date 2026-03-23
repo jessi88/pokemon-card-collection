@@ -24,7 +24,7 @@ const Card = ({ d, typeColors, maxHp, maxAttack }) => {
           top: 0,
           left: 0,
           right: 0,
-          height: "6px",
+          height: "20px",
           background: typeColor,
         }}
       />
