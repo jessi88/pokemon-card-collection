@@ -41,9 +41,12 @@ const type_colors = {
 const maxHp = Math.max(...pokemons.map((p) => p.hp));
 const maxAttack = Math.max(...pokemons.map((p) => p.attack));
 
+const pokemonTypes = ["All", ...new Set(pokemons.map((p) => p.type))];
+
 function App() {
   const [favorites, setFavorites] = useState(new Set());
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [selectedType, setSelectedType] = useState("All");
 
   const toggleFavorite = (id) => {
     setFavorites((prev) => {
@@ -57,24 +60,34 @@ function App() {
     });
   };
 
-  const filteredPokemons = showFavoritesOnly
-    ? pokemons.filter((p) => favorites.has(p.id))
-    : pokemons;
+  const filteredPokemons = pokemons.filter((p) => {
+    const matchesFavorites = !showFavoritesOnly || favorites.has(p.id);
+    const matchesType = selectedType === "All" || p.type === selectedType;
+    return matchesFavorites && matchesType;
+  });
 
   return (
     <div style={{ width: "100%" }}>
-      <button
-        onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
-        style={{
-          marginBottom: "16px",
-          padding: "8px 12px",
-          borderRadius: "8px",
-          border: "1px solid #ccc",
-          cursor: "pointer",
-        }}
-      >
-        {showFavoritesOnly ? "Show All" : "Show Favorites ❤️"}
-      </button>
+      <div className="filter-bar">
+        <button
+          className="filter-button"
+          onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+        >
+          {showFavoritesOnly ? "Show All Pokémon" : "Favorites Only ❤️"}
+        </button>
+
+        <select
+          className="filter-select"
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
+        >
+          {pokemonTypes.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div
         style={{
