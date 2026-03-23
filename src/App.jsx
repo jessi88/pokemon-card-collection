@@ -62,7 +62,7 @@ function App() {
     : pokemons;
 
   return (
-    <>
+    <div style={{ width: "100%" }}>
       <button
         onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
         style={{
@@ -75,12 +75,13 @@ function App() {
       >
         {showFavoritesOnly ? "Show All" : "Show Favorites ❤️"}
       </button>
-      ;
+
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
           gap: "16px",
+          width: "100%",
         }}
       >
         {filteredPokemons.map((d) => (
@@ -95,7 +96,7 @@ function App() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
