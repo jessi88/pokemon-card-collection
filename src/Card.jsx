@@ -1,10 +1,12 @@
+import Bar from './Bar.jsx'
+
 const Card = ({ d }) => {
   return (
     <div
       style={{
         width: 120,
         backgroundColor: "white",
-        borderRadius: 4,
+        borderRadius: 10,
         margin: 4,
       }}
     >
@@ -16,9 +18,9 @@ const Card = ({ d }) => {
       <p>
         <strong>{d.name}</strong>
       </p>
-      <p>Type: {d.type}</p>
-      <p>Hp: {d.hp}</p>
-      <p>Attack: {d.attack}</p>
+      <p>{d.type}</p>
+      <Bar width={d.hp} color={"#0afb0d"} type="HP" />
+      <Bar width={d.attack} color={"#ff0607"} type="ATK" />
     </div>
   );
 };

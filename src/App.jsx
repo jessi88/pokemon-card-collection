@@ -36,9 +36,8 @@ function App() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 300px)",
-          gap: 12,
-          fontFamily: "sans-serif",
+          gridTemplateColumns: "repeat(6, 300px)",
+          gap: 12
         }}
       >
         {pokemons.map((d) => (
