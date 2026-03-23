@@ -72,11 +72,8 @@ body {
 
 /* md breakpoint (≈ 768px) */
 @media (min-width: 768px) {
-  .header {
-    padding: 40px;
-  }
   .main {
-    padding-left: 80px; /* px-20 */
+    padding-left: 80px;
     padding-right: 80px;
   }
 
@@ -88,7 +85,7 @@ body {
 /* lg breakpoint (≈ 1024px) */
 @media (min-width: 1024px) {
   .main {
-    padding-left: 128px; /* px-32 */
+    padding-left: 128px;
     padding-right: 128px;
   }
 }
