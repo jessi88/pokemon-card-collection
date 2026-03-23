@@ -51,7 +51,23 @@ const Card = ({
       <p>
         <strong>{d.name}</strong>
       </p>
-      <p style={{ color: typeColor }}>{d.type}</p>
+      <span
+        style={{
+          backgroundColor: typeColor,
+          color: "#fff",
+          padding: "4px 10px",
+          borderRadius: "999px",
+          fontSize: "12px",
+          fontWeight: "600",
+          letterSpacing: "0.5px",
+          textTransform: "uppercase",
+          marginBottom: "6px",
+          boxShadow: "0 2px 8px ${typeColor}66",
+          background: `linear-gradient(135deg, ${typeColor}, #ffffff33)`,
+        }}
+      >
+        {d.type}
+      </span>
       <Bar value={d.hp} color={"#0afb0d"} type="HP" max={maxHp} />
       <Bar value={d.attack} color={"#ff0607"} type="ATK" max={maxAttack} />
     </div>

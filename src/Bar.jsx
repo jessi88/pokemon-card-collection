@@ -4,7 +4,7 @@ const Bar = ({ value, color, type, max = 150 }) => {
   const [animatedWidth, setAnimatedWidth] = useState(0);
   const normalizedWidth = (value / max) * 100;
 
-    useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setAnimatedWidth(normalizedWidth);
     }, 100);
