@@ -36,7 +36,7 @@ body {
     3px 3px 0 #3466af,
     6px 6px 0 rgba(0, 0, 0, 0.15);
   transform: perspective(500px) rotateX(10deg);
-  margin: 24px 0;
+  margin: 12px 0;
 }
 
 .main {
@@ -57,7 +57,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 24px;
 
@@ -74,7 +74,8 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-align: center;
+  text-align: center; /* 👈 ensure centered */
+  width: 100%; 
 }
 
 /* md breakpoint (≈ 768px) */
