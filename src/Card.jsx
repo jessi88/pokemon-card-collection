@@ -62,14 +62,13 @@ const Card = ({
           letterSpacing: "0.5px",
           textTransform: "uppercase",
           marginBottom: "6px",
-          boxShadow: "0 2px 8px ${typeColor}66",
-          background: `linear-gradient(135deg, ${typeColor}, #ffffff33)`,
+          boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
         }}
       >
         {d.type}
       </span>
-      <Bar value={d.hp} color={"#0afb0d"} type="HP" max={maxHp} />
-      <Bar value={d.attack} color={"#ff0607"} type="ATK" max={maxAttack} />
+      <Bar value={d.hp} color={"#6BCB77"} type="HP" max={maxHp} />
+      <Bar value={d.attack} color={"#FF6B6B"} type="ATK" max={maxAttack} />
     </div>
   );
 };
