@@ -12,11 +12,13 @@ const Card = ({
 
   return (
     <div
+      className="card"
       style={{
         position: "relative",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        boxShadow: "rgba(0, 0, 0, 0.1) 0px 2px 8px",
         background: "#ffffff",
         borderRadius: "16px",
         padding: "18px 12px 12px",
