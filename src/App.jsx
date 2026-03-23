@@ -61,21 +61,21 @@ function App() {
     ? pokemons.filter((p) => favorites.has(p.id))
     : pokemons;
 
-  <button
-    onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
-    style={{
-      marginBottom: "16px",
-      padding: "8px 12px",
-      borderRadius: "8px",
-      border: "1px solid #ccc",
-      cursor: "pointer",
-    }}
-  >
-    {showFavoritesOnly ? "Show All" : "Show Favorites ❤️"}
-  </button>;
-
   return (
     <>
+      <button
+        onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+        style={{
+          marginBottom: "16px",
+          padding: "8px 12px",
+          borderRadius: "8px",
+          border: "1px solid #ccc",
+          cursor: "pointer",
+        }}
+      >
+        {showFavoritesOnly ? "Show All" : "Show Favorites ❤️"}
+      </button>
+      ;
       <div
         style={{
           display: "grid",
