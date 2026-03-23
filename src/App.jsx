@@ -25,8 +25,18 @@ const pokemons = [
   { id: 148, name: "Dragonair", type: "Dragon", hp: 61, attack: 84 },
 ];
 
-// Sprite image URL pattern:
-// `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+const type_colors = {
+  Grass: "#7AC74C",
+  Fire: "#EE8130",
+  Water: "#6390F0",
+  Electric: "#F7D02C",
+  Psychic: "#F95587",
+  Normal: "#A8A77A",
+  Ghost: "#735797",
+  Dragon: "#6F35FC",
+  Fighting: "#C22E28",
+  Rock: "#B6A136",
+};
 
 function App() {
   return (
@@ -36,16 +46,16 @@ function App() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(6, 300px)",
-          gap: 12
+          gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+          gap: "16px"
         }}
       >
         {pokemons.map((d) => (
-          <Card key={d.id} d={d}/>
+          <Card key={d.id} d={d} typeColors={type_colors}/>
         ))}
       </div>
     </>
   );
-}
+};
 
 export default App;
