@@ -70,22 +70,9 @@ body {
 
 /* md breakpoint (≈ 768px) */
 @media (min-width: 768px) {
-  .header {
-    padding: 40px;
-  }
-
   .main {
     padding-left: 80px; /* px-20 */
     padding-right: 80px;
-  }
-
-  .footer {
-    padding: 40px;
-    flex-direction: row;
-  }
-
-  .footer-text {
-    text-align: left;
   }
 }
 
