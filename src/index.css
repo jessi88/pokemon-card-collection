@@ -20,6 +20,7 @@ body {
 }
 
 .header {
+  padding: 24px;
   display: flex;
   justify-content: center;
 }
@@ -45,12 +46,13 @@ body {
   display: flex;
   align-items: center;
 
-  padding: 48px 24px; /* py-12 (48px), px-6 (24px) */
+  padding: 48px 24px;
 
   position: relative;
 }
 
 .footer {
+  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,9 +72,16 @@ body {
 
 /* md breakpoint (≈ 768px) */
 @media (min-width: 768px) {
+  .header {
+    padding: 40px;
+  }
   .main {
     padding-left: 80px; /* px-20 */
     padding-right: 80px;
+  }
+
+  .footer {
+    padding: 40px;
   }
 }
 
