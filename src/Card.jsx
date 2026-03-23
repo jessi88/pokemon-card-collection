@@ -1,6 +1,6 @@
 import Bar from './Bar.jsx';
 
-const Card = ({ d, typeColors }) => {
+const Card = ({ d, typeColors, maxHp, maxAttack }) => {
 
   const typeColor = typeColors[d.type] || "#ccc";
 
@@ -39,8 +39,8 @@ const Card = ({ d, typeColors }) => {
       />
       <p><strong>{d.name}</strong></p>
       <p style={{ color: typeColor }}>{d.type}</p>
-      <Bar width={d.hp} color={"#0afb0d"} type="HP" />
-      <Bar width={d.attack} color={"#ff0607"} type="ATK" />
+      <Bar value={d.hp} color={"#0afb0d"} type="HP" max={maxHp} />
+      <Bar value={d.attack} color={"#ff0607"} type="ATK" max={maxAttack} />
     </div>
   );
 };

@@ -1,4 +1,17 @@
-const Bar = ({ width, color, type }) => {
+import { useEffect, useState } from "react";
+
+const Bar = ({ value, color, type, max = 150 }) => {
+  const [animatedWidth, setAnimatedWidth] = useState(0);
+  const normalizedWidth = (value / max) * 100;
+
+    useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimatedWidth(normalizedWidth);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [normalizedWidth]);
+
   return (
     <div
       style={{
@@ -22,14 +35,16 @@ const Bar = ({ width, color, type }) => {
       >
         <div
           style={{
-            width: `${width}%`,
+            width: `${animatedWidth}%`,
             height: "100%",
             backgroundColor: color,
+            borderRadius: 4,
+            transition: "width 0.8s ease-out",
           }}
         />
       </div>
 
-      <span style={{ width: 30, textAlign: "right" }}>{width}</span>
+      <span style={{ width: 30, textAlign: "right" }}>{value}</span>
     </div>
   );
 };

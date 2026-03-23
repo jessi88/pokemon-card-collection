@@ -38,6 +38,9 @@ const type_colors = {
   Rock: "#B6A136",
 };
 
+const maxHp = Math.max(...pokemons.map((p) => p.hp));
+const maxAttack = Math.max(...pokemons.map((p) => p.attack));
+
 function App() {
   return (
     <>
@@ -47,15 +50,21 @@ function App() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-          gap: "16px"
+          gap: "16px",
         }}
       >
         {pokemons.map((d) => (
-          <Card key={d.id} d={d} typeColors={type_colors}/>
+          <Card
+            key={d.id}
+            d={d}
+            typeColors={type_colors}
+            maxHp={maxHp}
+            maxAttack={maxAttack}
+          />
         ))}
       </div>
     </>
   );
-};
+}
 
 export default App;
