@@ -1,6 +1,13 @@
 import Bar from "./Bar.jsx";
 
-const Card = ({ d, typeColors, maxHp, maxAttack }) => {
+const Card = ({
+  d,
+  typeColors,
+  maxHp,
+  maxAttack,
+  isFavorite,
+  toggleFavorite,
+}) => {
   const typeColor = typeColors[d.type] || "#ccc";
 
   return (
@@ -13,7 +20,7 @@ const Card = ({ d, typeColors, maxHp, maxAttack }) => {
         boxShadow: "rgba(0, 0, 0, 0.1) 0px 2px 8px",
         background: "#ffffff",
         borderRadius: "16px",
-        padding: "12px 12px 12px",
+        padding: "18px 12px 12px",
         paddingTop: "18px",
         overflow: "hidden",
       }}
@@ -28,6 +35,13 @@ const Card = ({ d, typeColors, maxHp, maxAttack }) => {
           background: typeColor,
         }}
       />
+
+      <button
+        className={`favorite-btn ${isFavorite ? "active" : ""}`}
+        onClick={() => toggleFavorite(d.id)}
+      >
+        {isFavorite ? "♥" : "♡"}
+      </button>
 
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${d.id}.png`}

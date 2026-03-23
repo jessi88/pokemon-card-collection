@@ -42,6 +42,38 @@ const maxHp = Math.max(...pokemons.map((p) => p.hp));
 const maxAttack = Math.max(...pokemons.map((p) => p.attack));
 
 function App() {
+  const [favorites, setFavorites] = useState(new Set());
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+
+  const toggleFavorite = (id) => {
+    setFavorites((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
+  };
+
+  const filteredPokemons = showFavoritesOnly
+    ? pokemons.filter((p) => favorites.has(p.id))
+    : pokemons;
+
+  <button
+    onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+    style={{
+      marginBottom: "16px",
+      padding: "8px 12px",
+      borderRadius: "8px",
+      border: "1px solid #ccc",
+      cursor: "pointer",
+    }}
+  >
+    {showFavoritesOnly ? "Show All" : "Show Favorites ❤️"}
+  </button>;
+
   return (
     <>
       <div
@@ -51,13 +83,15 @@ function App() {
           gap: "16px",
         }}
       >
-        {pokemons.map((d) => (
+        {filteredPokemons.map((d) => (
           <Card
             key={d.id}
             d={d}
             typeColors={type_colors}
             maxHp={maxHp}
             maxAttack={maxAttack}
+            isFavorite={favorites.has(d.id)}
+            toggleFavorite={toggleFavorite}
           />
         ))}
       </div>
