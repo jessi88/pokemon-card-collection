@@ -4,7 +4,6 @@
     box-shadow 0.25s ease;
 }
 
-/* Hover effect */
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow:
@@ -14,8 +13,8 @@
 
 .favorite-btn {
   position: absolute;
-  top: 27px;
-  right: 8px;
+  top: 30px;
+  right: 6px;
   background: transparent;
   border: none;
   color: red;

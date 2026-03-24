@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  padding: 24px;
+  padding: 40px;
   display: flex;
   justify-content: center;
 }
@@ -42,12 +42,9 @@ body {
 
 .main {
   flex-grow: 1;
-
   display: flex;
   align-items: center;
-
-  padding: 48px 24px;
-
+  padding: 0 24px;
   position: relative;
 }
 
