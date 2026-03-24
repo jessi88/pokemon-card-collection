@@ -1,6 +1,6 @@
 # Pokémon Card Collection
 
-My first React project for the **D3 ❤️ React** course.
+My first React project for the [D3 ❤️ React](https://www.react-graph-gallery.com/react-d3-dataviz-course) course.
 
 ## React + Vite
 
